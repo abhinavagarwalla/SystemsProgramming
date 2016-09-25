@@ -41,6 +41,15 @@ int main(){
             if(f(v)<200)printf("138 %d ",192+8*f(u)+f(v));
 	    else printf("%d %s ",176+f(u),v);
 	}
+	if(strcmp(t,"sub")==0){
+	    scanf("%s%s",u,v);i+=2;
+	    if(f(v)<200)printf("42 %d ",192+8*f(u)+f(v));
+	    else {printf("128 %d %s ", 232+f(u),v);i+=1;}
+	}
+	if(strcmp(t,"adc")==0){
+	    scanf("%s%s",u,v);i+=3;
+	    printf("128 %d %s ", 208+f(u),v);
+	}
     
     }while(strcmp(t,"end")!=0);
     

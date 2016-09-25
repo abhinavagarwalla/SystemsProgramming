@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 int main(){
-    int i=0,cy=1,x,y,z,p,q,r[8];
+    int i=0,cy=1,cz=0,x,y,z,p,q,r[8];
     int a[10000],pc=0;
     char t[10],c;
     FILE *fp;
@@ -50,7 +50,14 @@ int main(){
 	    p = y%8;
 	    q = r[p];
 	    if((y>191)&&(y<200))r[p]+=z;
+	    if((y>231)&&(y<240))r[p]-=z;
+	    if((y>207)&&(y<216))r[p]=r[p]+z+cz;
 	    if(y>247) if(q<z)cy=1;else cy=0;
+	    if(r[p]>=256){
+		r[p]-=256;
+		cz=1;
+	    }
+	    else cz=0;
 	}
 
 	if(x==114){
