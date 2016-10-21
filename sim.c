@@ -6,9 +6,9 @@ int main(){
     char t[10],c;
     FILE *fp;
 
-    printf("Give filename: ");
-    scanf("%s",t);
-    fp = fopen(t,"r");
+    //printf("Give filename: ");
+    //scanf("%s",t);
+    fp = fopen("tmp.txt","r");
     for(i=0;i<=10000;i++)fscanf(fp,"%d",&a[i]);
 
     while(1){
@@ -65,4 +65,5 @@ int main(){
 	   if(cy==1)pc+=y;
 	}
     }
+    return 0;
 }
