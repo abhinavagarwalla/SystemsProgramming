@@ -19,7 +19,8 @@ int f(char t[]){
 
 int main(){
     char t[10], u[10], v[10], sy[200];
-    int i=0;
+    int i=0, k=0;
+    int jlines[100], jlabel[100];
 
     FILE *fp;
     fp = fopen("tmp.txt","w");
@@ -34,6 +35,9 @@ int main(){
 	if(strcmp(t,"jc")==0){
             scanf("%s",u);i+=2;
             fprintf(fp,"114 %d ",sy[u[0]]-i);
+	    jlines[k] = i-1;
+	    jlabel[k] = u[0];
+	    k++;
         }
 	if(strcmp(t,"add")==0){
             scanf("%s%s",u,v);i+=3;
@@ -74,8 +78,23 @@ int main(){
 	    scanf("%s%s",u,v);i+=3;
 	    fprintf(fp,"128 %d %s ", 208+f(u),v);
 	}
-    
+	if(strcmp(t,"mul")==0){
+	
+	}    
     }while(strcmp(t,"end")!=0);
     fclose(fp);
+
+    /*fp = fopen("tmp.txt","r");
+    FILE *fpo;
+    fpo = fopen("tmp2.txt","w");
+
+    do{
+	scanf("%d",i);
+	if(i!=114)fprintf(fpo,"%d ",i);
+	else{
+	    fprintf(fpo,"114 ");
+	    
+    }while(feof(fp));*/
+
     return 0;
 }
