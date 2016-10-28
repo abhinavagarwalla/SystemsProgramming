@@ -41,8 +41,14 @@ int main(){
 	    else fprintf(fp,"128 %d %d ",192+f(u),192+f(v));
         }
 	if(strcmp(t,"cmp")==0){
-            scanf("%s%s",u,v);i+=3;
-            fprintf(fp,"128 %d %s ",248+f(u),v);
+            scanf("%s%s",u,v);i+=2;
+            if(f(v)>200){
+		i++;
+		if(u[1]!='X')fprintf(fp,"128 %d %s ",248+f(u),v);
+	    }
+	    else{
+		if(u[1]!='X')fprintf(fp,"58 %d ",192+8*f(u)+f(v));
+	    }
         }
 	if(strcmp(t,"mov")==0){
             scanf("%s%s",u,v);i+=2;

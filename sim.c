@@ -24,6 +24,14 @@ int main(){
 	    q = y%8;
 	    r[p] = r[q];
 	}
+	
+	if(x==58){
+	    y = a[pc++];
+	    p = y%64/8;
+	    q = y%8;
+	    if(r[p] <= r[q])cy=1;
+	    else cy=0;
+	}
 
 	if((x==205)&&(r[4]==2)){
 	    y = a[pc++];
@@ -49,7 +57,7 @@ int main(){
 	    z = a[pc++];
 	    p = y%8;
 	    q = r[p];
-	    if((y>191)&&(y<200))r[p]+=z;
+	    if((y>191)&&(y<200)){r[p]+=z;}
 	    if((y>231)&&(y<240))r[p]-=z;
 	    if((y>207)&&(y<216))r[p]=r[p]+z+cz;
 	    if(y>247) if(q<z)cy=1;else cy=0;
